@@ -1,0 +1,35 @@
+{
+  "name": "manage-front",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "0.9.x",
+    "mobx": "^3.4.1",
+    "mobx-react": "^4.3.5",
+    "react-router-dom": "^4.2.2",
+    "superagent": "^3.8.2"
+  },
+  "devDependencies": {
+    "npm-watch": ""
+  },
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": [
+        "js,css,html,jsx"
+      ],
+      "quiet": false
+    }
+  },
+  "scripts": {
+    "watch:build": "npm-watch build",
+    "build": "rm -rf ../public/js && react-scripts build && cp -r ./build/static/js ../public/ && mv ../public/js/main.*.js ../public/js/main.js && mv ../public/js/main.*.js.map ../public/js/main.js.map",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "clean": "rm -rf node_modules && rm -rf build/* && rm -rf ../public/js"
+  }
+}

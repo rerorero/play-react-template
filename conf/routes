@@ -1,0 +1,11 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+GET     /ui/*path                   controllers.FrontController.indexWithPath(path)
+GET     /ui                         controllers.FrontController.index
+
+GET     /assets/*file               controllers.Assets.at(file)
+
+GET     /api/v1/say                 controllers.HelloController.say

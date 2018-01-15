@@ -1,0 +1,16 @@
+<configuration>
+    <appender name="default_log" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log_file_dir}/application.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log_file_dir}/%d{yyyy-MM-dd}/%d{yyyy-MM-dd-HH}.log.zip</fileNamePattern>
+            <maxHistory>360</maxHistory> <!-- 24 * 15 -->
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="default_log"/>
+    </root>
+</configuration>
